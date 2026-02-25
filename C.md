@@ -39,8 +39,6 @@ C was initially used for system development work, particularly the programs that
 
 A C program can vary from 3 lines to millions of lines and it should be written into one or more text files with extension **".c"**; for example, _hello.c_. You can use **"vi"**, **"vim"** or any other text editor to write your C program into a file.
 
-This tutorial assumes that you know how to edit a text file and how to write source code inside a program file.
-
 # C - Environment Setup
 
 ## Local Environment Setup
@@ -85,8 +83,6 @@ gcc version 4.1.2 20080704 (Red Hat 4.1.2-46)
 
 # C - Program Structure
 
-Before we study the basic building blocks of the C programming language, let us look at a bare minimum C program structure so that we can take it as a reference in the upcoming chapters.
-
 ## Hello World Example
 
 A C program basically consists of the following parts −
@@ -112,22 +108,22 @@ int main() {
 
 Let us take a look at the various parts of the above program −
 
-- The first line of the program _#include <stdio.h>_ is a preprocessor command, which tells a C compiler to include stdio.h file before going to actual compilation.
-- The next line _int main()_ is the main function where the program execution begins.
-- The next line /*...*/ will be ignored by the compiler and it has been put to add additional comments in the program. So such lines are called comments in the program.
-- The next line _printf(...)_ is another function available in C which causes the message "Hello, World!" to be displayed on the screen.
-- The next line **return 0;** terminates the main() function and returns the value 0.
+- The first line of the program `#include <stdio.h>` is a preprocessor command, which tells a C compiler to include stdio.h file before going to actual compilation.
+- The next line `int main()` is the main function where the program execution begins.
+- The next line `/*...*/` will be ignored by the compiler and it has been put to add additional comments in the program. So such lines are called comments in the program.
+- The next line `printf(...)` is another function available in C which causes the message "Hello, World!" to be displayed on the screen.
+- The next line `return 0;` terminates the main() function and returns the value 0.
 
 ## Compile and Execute C Program
 
 Let us see how to save the source code in a file, and how to compile and run it. Following are the simple steps −
 
 - Open a text editor and add the above-mentioned code.
-- Save the file as _hello.c_
+- Save the file as `hello.c`
 - Open a command prompt and go to the directory where you have saved the file.
-- Type _gcc hello.c_ and press enter to compile your code.
-- If there are no errors in your code, the command prompt will take you to the next line and would generate _a.out_ executable file.
-- Now, type _a.out_ to execute your program.
+- Type `gcc hello.c` and press enter to compile your code.
+- If there are no errors in your code, the command prompt will take you to the next line and would generate `a.out` executable file.
+- Now, type `a.out` to execute your program.
 - You will see the output _"Hello World"_ printed on the screen.
 
 ```
@@ -171,7 +167,7 @@ return 0;
 
 ## Comments
 
-Comments are like helping text in your C program and they are ignored by the compiler. They start with /* and terminate with the characters */ as shown below −
+Comments are like helping text in your C program and they are ignored by the compiler. They start with `/*` and terminate with the characters `*/` as shown below −
 
 ```
 /* my first program in C */
@@ -183,7 +179,7 @@ You cannot have comments within comments and they do not occur within a string o
 
 A C identifier is a name used to identify a variable, function, or any other user-defined item. An identifier starts with a letter A to Z, a to z, or an underscore '_' followed by zero or more letters, underscores, and digits (0 to 9).
 
-C does not allow punctuation characters such as @, $, and % within identifiers. C is a **case-sensitive** programming language. Thus, _Manpower_ and _manpower_ are two different identifiers in C. Here are some examples of acceptable identifiers −
+C does not allow punctuation characters such as `@`, `$`, and   `%` within identifiers. C is a **case-sensitive** programming language. Thus, _Manpower_ and _manpower_ are two different identifiers in C. Here are some examples of acceptable identifiers −
 
 ```
 mohd       zara    abc   move_name  a_123
@@ -254,7 +250,7 @@ The following table provides the details of standard integer types with their st
 |long|8 bytes|-9223372036854775808 to 9223372036854775807|
 |unsigned long|8 bytes|0 to 18446744073709551615|
 
-To get the exact size of a type or a variable on a particular platform, you can use the **sizeof** operator. The expressions _sizeof(type)_ yields the storage size of the object or type in bytes. Given below is an example to get the size of various type on a machine using different constant defined in limits.h header file −
+To get the exact size of a type or a variable on a particular platform, you can use the `sizeof` operator. The expressions `sizeof(type)` yields the storage size of the object or type in bytes. Given below is an example to get the size of various type on a machine using different constant defined in `limits.h` header file −
 
 ```
 #include <stdio.h>
@@ -314,7 +310,7 @@ The following table provide the details of standard floating-point types with st
 |double|8 byte|2.3E-308 to 1.7E+308|15 decimal places|
 |long double|10 byte|3.4E-4932 to 1.1E+4932|19 decimal places|
 
-The header file float.h defines macros that allow you to use these values and other details about the binary representation of real numbers in your programs. The following example prints the storage space taken by a float type and its range values −
+The header file `float.h` defines macros that allow you to use these values and other details about the binary representation of real numbers in your programs. The following example prints the storage space taken by a float type and its range values −
 
 ```
 #include <stdio.h>
@@ -386,7 +382,7 @@ A variable definition tells the compiler where and how much storage to create fo
 type variable_list;
 ```
 
-Here, **type** must be a valid C data type including char, w_char, int, float, double, bool, or any user-defined object; and **variable_list** may consist of one or more identifier names separated by commas. Some valid declarations are shown here −
+Here, `type` must be a valid C data type including char, w_char, int, float, double, bool, or any user-defined object; and `variable_list` may consist of one or more identifier names separated by commas. Some valid declarations are shown here −
 
 ```
 int    i, j, k;
@@ -395,7 +391,7 @@ float  f, salary;
 double d;
 ```
 
-The line **int i, j, k;** declares and defines the variables i, j, and k; which instruct the compiler to create variables named i, j and k of type int.
+The line `int i, j, k;` declares and defines the variables i, j, and k; which instruct the compiler to create variables named i, j and k of type int.
 
 Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a constant expression as follows −
 
@@ -418,7 +414,7 @@ For definition without an initializer: variables with static storage duration ar
 
 A variable declaration provides assurance to the compiler that there exists a variable with the given type and name so that the compiler can proceed for further compilation without requiring the complete detail about the variable. A variable definition has its meaning at the time of compilation only, the compiler needs actual variable definition at the time of linking the program.
 
-A variable declaration is useful when you are using multiple files and you define your variable in one of the files which will be available at the time of linking of the program. You will use the keyword **extern** to declare a variable at any place. Though you can declare a variable multiple times in your C program, it can be defined only once in a file, a function, or a block of code.
+A variable declaration is useful when you are using multiple files and you define your variable in one of the files which will be available at the time of linking of the program. You will use the keyword `extern` to declare a variable at any place. Though you can declare a variable multiple times in your C program, it can be defined only once in a file, a function, or a block of code.
 
 ### Example
 
@@ -495,7 +491,7 @@ int g = 20; // valid statement
 
 # C - Constants and Literals
 
-Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called **literals**.
+Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called `literals`.
 
 Constants can be of any of the basic data types like _an integer constant, a floating constant, a character constant, or a string literal_. There are enumeration constants as well.
 
@@ -694,7 +690,7 @@ A storage class defines the scope (visibility) and life-time of variables and/or
 
 ## The auto Storage Class
 
-The **auto** storage class is the default storage class for all local variables.
+The `auto` storage class is the default storage class for all local variables.
 
 ```
 {
@@ -707,7 +703,7 @@ The example above defines two variables with in the same storage class. 'auto' c
 
 ## The register Storage Class
 
-The **register** storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it does not have a memory location).
+The `register` storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it does not have a memory location).
 
 ```
 {
@@ -719,11 +715,11 @@ The register should only be used for variables that require quick access such as
 
 ## The static Storage Class
 
-The **static** storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.
+The `static` storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.
 
 The static modifier may also be applied to global variables. When this is done, it causes that variable's scope to be restricted to the file in which it is declared.
 
-In C programming, when **static** is used on a global variable, it causes only one copy of that member to be shared by all the objects of its class.
+In C programming, when `static` is used on a global variable, it causes only one copy of that member to be shared by all the objects of its class.
 
 ```
 #include <stdio.h>
@@ -764,7 +760,7 @@ i is 10 and count is 0
 
 ## The extern Storage Class
 
-The **extern** storage class is used to give a reference of a global variable that is visible to ALL the program files. When you use 'extern', the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.
+The `extern` storage class is used to give a reference of a global variable that is visible to ALL the program files. When you use 'extern', the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.
 
 When you have multiple files and you define a global variable or function, which will also be used in other files, then _extern_ will be used in another file to provide the reference of defined variable or function. Just for understanding, _extern_ is used to declare a global variable or function in another file.
 
@@ -818,8 +814,6 @@ An operator is a symbol that tells the compiler to perform specific mathematical
 - Bitwise Operators
 - Assignment Operators
 - Misc Operators
-
-We will, in this chapter, look into the way each operator works.
 
 ## Arithmetic Operators
 
@@ -973,8 +967,6 @@ C programming language provides the following types of decision making statement
 
 ## The ? : Operator
 
-We have covered **conditional operator ? :** in the previous chapter which can be used to replace **if...else** statements. It has the following general form −
-
 ```
 Exp1 ? Exp2 : Exp3;
 ```
@@ -1040,13 +1032,13 @@ When the conditional expression is absent, it is assumed to be true. You may hav
 
 # C - Functions
 
-A function is a group of statements that together perform a task. Every C program has at least one function, which is **main()**, and all the most trivial programs can define additional functions.
+A function is a group of statements that together perform a task. Every C program has at least one function, which is `main()`, and all the most trivial programs can define additional functions.
 
 You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task.
 
 A function **declaration** tells the compiler about a function's name, return type, and parameters. A function **definition** provides the actual body of the function.
 
-The C standard library provides numerous built-in functions that your program can call. For example, **strcat()** to concatenate two strings, **memcpy()** to copy one memory location to another location, and many more functions.
+The C standard library provides numerous built-in functions that your program can call. For example, `strcat()` to concatenate two strings, `memcpy()` to copy one memory location to another location, and many more functions.
 
 A function can also be referred as a method or a sub-routine or a procedure, etc.
 
@@ -1069,7 +1061,7 @@ A function definition in C programming consists of a _function header_ and a 
 
 ## Example
 
-Given below is the source code for a function called **max()**. This function takes two parameters num1 and num2 and returns the maximum value between the two −
+Given below is the source code for a function called `max()`. This function takes two parameters num1 and num2 and returns the maximum value between the two −
 
 ```
 /* function returning the max between two numbers */
@@ -1171,8 +1163,8 @@ While calling a function, there are two ways in which arguments can be passed to
 
 |Sr.No.|Call Type & Description|
 |---|---|
-|1|[Call by value](https://www.tutorialspoint.com/cprogramming/c_function_call_by_value.htm)<br><br>This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.|
-|2|[Call by reference](https://www.tutorialspoint.com/cprogramming/c_function_call_by_reference.htm)<br><br>This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.|
+|1|Call by value<br><br>This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.|
+|2|Call by reference<br><br>This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.|
 
 By default, C uses **call by value** to pass arguments. In general, it means the code within a function cannot alter the arguments used to call the function.
 
@@ -1180,15 +1172,15 @@ By default, C uses **call by value** to pass arguments. In general, it means t
 
 A scope in any programming is a region of the program where a defined variable can have its existence and beyond that variable it cannot be accessed. There are three places where variables can be declared in C programming language −
 
-- Inside a function or a block which is called **local** variables.
-- Outside of all functions which is called **global** variables.
-- In the definition of function parameters which are called **formal** parameters.
+- Inside a function or a block which is called `local` variables.
+- Outside of all functions which is called `global` variables.
+- In the definition of function parameters which are called `formal` parameters.
 
 Let us understand what are **local** and **global** variables, and **formal** parameters.
 
 ## Local Variables
 
-Variables that are declared inside a function or block are called local variables. They can be used only by statements that are inside that function or block of code. Local variables are not known to functions outside their own. The following example shows how local variables are used. Here all the variables a, b, and c are local to main() function.
+Variables that are declared inside a function or block are called local variables. They can be used only by statements that are inside that function or block of code. Local variables are not known to functions outside their own. The following example shows how local variables are used. Here all the variables a, b, and c are local to `main()` function.
 
 
 ```
@@ -1369,7 +1361,7 @@ You will create exactly the same array as you did in the previous example. Follo
 balance[4] = 50.0;
 ```
 
-The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus 1. Shown below is the pictorial representation of the array we discussed above −
+The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus 1. 
 
 ![Array Presentation](https://www.tutorialspoint.com/cprogramming/images/array_presentation.jpg)
 
@@ -1426,10 +1418,10 @@ Arrays are important to C and should need a lot more attention. The following im
 
 |Sr.No.|Concept & Description|
 |---|---|
-|1|[Multi-dimensional arrays](https://www.tutorialspoint.com/cprogramming/c_multi_dimensional_arrays.htm)<br><br>C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.|
-|2|[Passing arrays to functions](https://www.tutorialspoint.com/cprogramming/c_passing_arrays_to_functions.htm)<br><br>You can pass to the function a pointer to an array by specifying the array's name without an index.|
-|3|[Return array from a function](https://www.tutorialspoint.com/cprogramming/c_return_arrays_from_function.htm)<br><br>C allows a function to return an array.|
-|4|[Pointer to an array](https://www.tutorialspoint.com/cprogramming/c_pointer_to_an_array.htm)<br><br>You can generate a pointer to the first element of an array by simply specifying the array name, without any index.|
+|1|Multi-dimensional arrays<br><br>C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.|
+|2|Passing arrays to functions<br><br>You can pass to the function a pointer to an array by specifying the array's name without an index.|
+|3|Return array from a function<br><br>C allows a function to return an array.|
+|4|Pointer to an array<br><br>You can generate a pointer to the first element of an array by simply specifying the array name, without any index.|
 
 # C - Pointers
 
@@ -1467,7 +1459,7 @@ A **pointer** is a variable whose value is the address of another variable, i.
 type *var-name;
 ```
 
-Here, **type** is the pointer's base type; it must be a valid C data type and **var-name** is the name of the pointer variable. The asterisk * used to declare a pointer is the same asterisk used for multiplication. However, in this statement the asterisk is being used to designate a variable as a pointer. Take a look at some of the valid pointer declarations −
+Here, `type` is the pointer's base type; it must be a valid C data type and `var-name` is the name of the pointer variable. The asterisk `*` used to declare a pointer is the same asterisk used for multiplication. However, in this statement the asterisk is being used to designate a variable as a pointer. Take a look at some of the valid pointer declarations −
 
 ```
 int    *ip;    /* pointer to an integer */
@@ -1480,7 +1472,7 @@ The actual data type of the value of all pointers, whether integer, float, chara
 
 ## How to Use Pointers?
 
-There are a few important operations, which we will do with the help of pointers very frequently. **(a)** We define a pointer variable, **(b)** assign the address of a variable to a pointer and **(c)** finally access the value at the address available in the pointer variable. This is done by using unary operator ***** that returns the value of the variable located at the address specified by its operand. The following example makes use of these operations −
+There are a few important operations, which we will do with the help of pointers very frequently. **(a)** We define a pointer variable, **(b)** assign the address of a variable to a pointer and **(c)** finally access the value at the address available in the pointer variable. This is done by using unary operator **`*`** that returns the value of the variable located at the address specified by its operand. The following example makes use of these operations −
 
 
 ```
@@ -1553,11 +1545,11 @@ Pointers have many but easy concepts and they are very important to C programmin
 
 |Sr.No.|Concept & Description|
 |---|---|
-|1|[Pointer arithmetic](https://www.tutorialspoint.com/cprogramming/c_pointer_arithmetic.htm)<br><br>There are four arithmetic operators that can be used in pointers: ++, --, +, -|
-|2|[Array of pointers](https://www.tutorialspoint.com/cprogramming/c_array_of_pointers.htm)<br><br>You can define arrays to hold a number of pointers.|
-|3|[Pointer to pointer](https://www.tutorialspoint.com/cprogramming/c_pointer_to_pointer.htm)<br><br>C allows you to have pointer on a pointer and so on.|
-|4|[Passing pointers to functions in C](https://www.tutorialspoint.com/cprogramming/c_passing_pointers_to_functions.htm)<br><br>Passing an argument by reference or by address enable the passed argument to be changed in the calling function by the called function.|
-|5|[Return pointer from functions in C](https://www.tutorialspoint.com/cprogramming/c_return_pointer_from_functions.htm)<br><br>C allows a function to return a pointer to the local variable, static variable, and dynamically allocated memory as well.|
+|1|Pointer arithmetic<br><br>There are four arithmetic operators that can be used in pointers: ++, --, +, -|
+|2|Array of pointers<br><br>You can define arrays to hold a number of pointers.|
+|3|Pointer to pointer<br><br>C allows you to have pointer on a pointer and so on.|
+|4|Passing pointers to functions in C<br><br>Passing an argument by reference or by address enable the passed argument to be changed in the calling function by the called function.|
+|5|Return pointer from functions in C<br><br>C allows a function to return a pointer to the local variable, static variable, and dynamically allocated memory as well.|
 
 # C - Strings
 
@@ -1659,7 +1651,7 @@ Structures are used to represent a record. Suppose you want to keep track of you
 
 ## Defining a Structure
 
-To define a structure, you must use the **struct** statement. The struct statement defines a new data type, with more than one member. The format of the struct statement is as follows −
+To define a structure, you must use the `struct` statement. The struct statement defines a new data type, with more than one member. The format of the struct statement is as follows −
 
 ```
 struct [structure tag] {
@@ -1684,7 +1676,7 @@ struct Books {
 
 ## Accessing Structure Members
 
-To access any member of a structure, we use the **member access operator (.)**. The member access operator is coded as a period between the structure variable name and the structure member that we wish to access. You would use the keyword **struct** to define variables of structure type. The following example shows how to use a structure in a program −
+To access any member of a structure, we use the `member access operator (.)`. The member access operator is coded as a period between the structure variable name and the structure member that we wish to access. You would use the keyword `struct` to define variables of structure type. The following example shows how to use a structure in a program −
 
 ```
 #include <stdio.h>
@@ -1923,7 +1915,7 @@ A **union** is a special data type available in C that allows to store differe
 
 ## Defining a Union
 
-To define a union, you must use the **union** statement in the same way as you did while defining a structure. The union statement defines a new data type with more than one member for your program. The format of the union statement is as follows −
+To define a union, you must use the `union` statement in the same way as you did while defining a structure. The union statement defines a new data type with more than one member for your program. The format of the union statement is as follows −
 
 ```
 union [union tag] {
@@ -1976,7 +1968,7 @@ Memory size occupied by data : 20
 
 ## Accessing Union Members
 
-To access any member of a union, we use the **member access operator (.)**. The member access operator is coded as a period between the union variable name and the union member that we wish to access. You would use the keyword **union** to define variables of union type. The following example shows how to use unions in a program −
+To access any member of a union, we use the `member access operator (.)`. The member access operator is coded as a period between the union variable name and the union member that we wish to access. You would use the keyword `union` to define variables of union type. The following example shows how to use unions in a program −
 
 ```
 #include <stdio.h>
@@ -2127,7 +2119,7 @@ The following table describes the variable elements of a bit field −
 |2|**member_name**<br><br>The name of the bit-field.|
 |3|**width**<br><br>The number of bits in the bit-field. The width must be less than or equal to the bit width of the specified type.|
 
-The variables defined with a predefined width are called **bit fields**. A bit field can hold more than a single bit; for example, if you need a variable to store a value from 0 to 7, then you can define a bit field with a width of 3 bits as follows −
+The variables defined with a predefined width are called `bit fields`. A bit field can hold more than a single bit; for example, if you need a variable to store a value from 0 to 7, then you can define a bit field with a width of 3 bits as follows −
 
 ```
 struct {
@@ -2172,7 +2164,7 @@ Age.age : 0
 
 # C - typedef
 
-The C programming language provides a keyword called **typedef**, which you can use to give a type a new name. Following is an example to define a term **BYTE** for one-byte numbers −
+The C programming language provides a keyword called `typedef`, which you can use to give a type a new name. Following is an example to define a term `BYTE` for one-byte numbers −
 
 ```
 typedef unsigned char BYTE;
@@ -2186,9 +2178,11 @@ BYTE  b1, b2;
 
 By convention, uppercase letters are used for these definitions to remind the user that the type name is really a symbolic abbreviation, but you can use lowercase, as follows −
 
+```
 typedef unsigned char byte;
+```
 
-You can use **typedef** to give a name to your user defined data types as well. For example, you can use typedef with structure to define a new data type and then use that data type to define structure variables directly as follows −
+You can use `typedef` to give a name to your user defined data types as well. For example, you can use typedef with structure to define a new data type and then use that data type to define structure variables directly as follows −
 
 ```
 #include <stdio.h>
@@ -2228,9 +2222,9 @@ Book  subject : C Programming Tutorial
 Book  book_id : 6495407
 ```
 
-## typedef vs `#define`
+## `typedef` vs `#define`
 
-**#define** is a C-directive which is also used to define the aliases for various data types similar to **typedef** but with the following differences −
+`#define` is a C-directive which is also used to define the aliases for various data types similar to `typedef` but with the following differences −
 
 - **typedef** is limited to giving symbolic names to types only where as **#define** can be used to define alias for values as well, q., you can define 1 as ONE etc.
 - **typedef** interpretation is performed by the compiler whereas **#define** statements are processed by the pre-processor.
@@ -2278,9 +2272,9 @@ The file pointers are the means to access the file for reading and writing purpo
 
 ## The getchar() and putchar() Functions
 
-The **int getchar(void)** function reads the next available character from the screen and returns it as an integer. This function reads only single character at a time. You can use this method in the loop in case you want to read more than one character from the screen.
+The `int getchar(void)` function reads the next available character from the screen and returns it as an integer. This function reads only single character at a time. You can use this method in the loop in case you want to read more than one character from the screen.
 
-The **int putchar(int c)** function puts the passed character on the screen and returns the same character. This function puts only single character at a time. You can use this method in the loop in case you want to display more than one character on the screen. Check the following example −
+The `int putchar(int c)` function puts the passed character on the screen and returns the same character. This function puts only single character at a time. You can use this method in the loop in case you want to display more than one character on the screen. Check the following example −
 
 ```
 #include <stdio.h>
@@ -2302,17 +2296,15 @@ When the above code is compiled and executed, it waits for you to input some tex
 
 ```
 $./a.out
-**Enter a value :** this is test
-**You entered:** t
+Enter a value : this is test
+You entered: t
 ```
 
 ## The gets() and puts() Functions
 
-The **char *gets(char *s)** function reads a line from **stdin** into the buffer pointed to by **s** until either a terminating newline or EOF (End of File).
+The `char *gets(char *s)` function reads a line from `stdin` into the buffer pointed to by `s` until either a terminating newline or EOF (End of File).
 
-The **int puts(const char *s)** function writes the string 's' and 'a' trailing newline to **stdout**.
-
-**NOTE:** Though it has been deprecated to use gets() function, Instead of using gets, you want to use [fgets()](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm "fgets();").
+The `int puts(const char *s)` function writes the string 's' and 'a' trailing newline to `stdout`.
 
 ```
 #include <stdio.h>
@@ -2334,16 +2326,16 @@ When the above code is compiled and executed, it waits for you to input some tex
 
 ```
 $./a.out
-**Enter a value :** this is test
-**You entered:** this is test
+Enter a value : this is test
+You entered: this is test
 ```
-## The scanf() and printf() Functions
+## The `scanf()` and `printf()` Functions
 
-The **int scanf(const char *format, ...)** function reads the input from the standard input stream **stdin** and scans that input according to the **format** provided.
+The `int scanf(const char *format, ...)` function reads the input from the standard input stream `stdin` and scans that input according to the `format` provided.
 
-The **int printf(const char *format, ...)** function writes the output to the standard output stream **stdout** and produces the output according to the format provided.
+The `int printf(const char *format, ...)` function writes the output to the standard output stream `stdout` and produces the output according to the format provided.
 
-The **format** can be a simple constant string, but you can specify %s, %d, %c, %f, etc., to print or read strings, integer, character or float respectively. There are many other formatting options available which can be used based on requirements. Let us now proceed with a simple example to understand the concepts better −
+The `format` can be a simple constant string, but you can specify `%s, %d, %c, %f,` etc., to print or read strings, integer, character or float respectively. There are many other formatting options available which can be used based on requirements. Let us now proceed with a simple example to understand the concepts better −
 
 ```
 #include <stdio.h>
@@ -2365,21 +2357,19 @@ When the above code is compiled and executed, it waits for you to input some tex
 
 ```
 $./a.out
-**Enter a value :** seven 7
-**You entered:** seven 7
+Enter a value : seven 7
+You entered: seven 7
 ```
 
-Here, it should be noted that scanf() expects input in the same format as you provided %s and %d, which means you have to provide valid inputs like "string integer". If you provide "string string" or "integer integer", then it will be assumed as wrong input. Secondly, while reading a string, scanf() stops reading as soon as it encounters a space, so "this is test" are three strings for scanf().
+Here, it should be noted that `scanf()` expects input in the same format as you provided `%s` and `%d`, which means you have to provide valid inputs like "string integer". If you provide "string string" or "integer integer", then it will be assumed as wrong input. Secondly, while reading a string, `scanf()` stops reading as soon as it encounters a space, so "this is test" are three strings for `scanf()`.
 
 # C - File I/O
 
-The last chapter explained the standard input and output devices handled by C programming language. This chapter cover how C programmers can create, open, close text or binary files for their data storage.
-
-A file represents a sequence of bytes, regardless of it being a text file or a binary file. C programming language provides access on high level functions as well as low level (OS level) calls to handle file on your storage devices. This chapter will take you through the important calls for file management.
+A file represents a sequence of bytes, regardless of it being a text file or a binary file. C programming language provides access on high level functions as well as low level (OS level) calls to handle file on your storage devices.
 
 ## Opening Files
 
-You can use the **fopen( )** function to create a new file or to open an existing file. This call will initialize an object of the type **FILE**, which contains all the information necessary to control the stream. The prototype of this function call is as follows −
+You can use the `fopen( )` function to create a new file or to open an existing file. This call will initialize an object of the type `FILE`, which contains all the information necessary to control the stream. The prototype of this function call is as follows −
 
 ```
 FILE *fopen( const char * filename, const char * mode );
@@ -2410,7 +2400,7 @@ To close a file, use the fclose( ) function. The prototype of this function is �
 int fclose( FILE *fp );
 ```
 
-The **fclose(-)** function returns zero on success, or **EOF** if there is an error in closing the file. This function actually flushes any data still pending in the buffer to the file, closes the file, and releases any memory used for the file. The EOF is a constant defined in the header file **stdio.h**.
+The `fclose(-)` function returns zero on success, or `EOF` if there is an error in closing the file. This function actually flushes any data still pending in the buffer to the file, closes the file, and releases any memory used for the file. The EOF is a constant defined in the header file `stdio.h`.
 
 There are various functions provided by C standard library to read and write a file, character by character, or in the form of a fixed length string.
 
@@ -2422,15 +2412,15 @@ Following is the simplest function to write individual characters to a stream �
 int fputc( int c, FILE *fp );
 ```
 
-The function **fputc()** writes the character value of the argument c to the output stream referenced by fp. It returns the written character written on success otherwise **EOF** if there is an error. You can use the following functions to write a null-terminated string to a stream −
+The function `fputc()` writes the character value of the argument c to the output stream referenced by fp. It returns the written character written on success otherwise `EOF` if there is an error. You can use the following functions to write a null-terminated string to a stream −
 
 ```
 int fputs( const char *s, FILE *fp );
 ```
 
-The function **fputs()** writes the string **s** to the output stream referenced by fp. It returns a non-negative value on success, otherwise **EOF** is returned in case of any error. You can use **int fprintf(FILE *fp,const char *format, ...)** function as well to write a string into a file. Try the following example.
+The function `fputs()` writes the string `s` to the output stream referenced by fp. It returns a non-negative value on success, otherwise `EOF` is returned in case of any error. You can use `int fprintf(FILE *fp,const char *format, ...)` function as well to write a string into a file. Try the following example.
 
-Make sure you have **/tmp** directory available. If it is not, then before proceeding, you must create this directory on your machine.
+Make sure you have `/tmp` directory available. If it is not, then before proceeding, you must create this directory on your machine.
 
 ```
 #include <stdio.h>
@@ -2445,7 +2435,7 @@ main() {
 }
 ```
 
-When the above code is compiled and executed, it creates a new file **test.txt** in /tmp directory and writes two lines using two different functions. Let us read this file in the next section.
+When the above code is compiled and executed, it creates a new file `test.txt` in `/tmp` directory and writes two lines using two different functions. Let us read this file in the next section.
 
 ## Reading a File
 
@@ -2455,15 +2445,15 @@ Given below is the simplest function to read a single character from a file −
 int fgetc( FILE * fp );
 ```
 
-The **fgetc()** function reads a character from the input file referenced by fp. The return value is the character read, or in case of any error, it returns **EOF**. The following function allows to read a string from a stream −
+The `fgetc()` function reads a character from the input file referenced by fp. The return value is the character read, or in case of any error, it returns `EOF`. The following function allows to read a string from a stream −
 
 ```
 char *fgets( char *buf, int n, FILE *fp );
 ```
 
-The functions **fgets()** reads up to n-1 characters from the input stream referenced by fp. It copies the read string into the buffer **buf**, appending a **null** character to terminate the string.
+The functions `fgets()` reads up to n-1 characters from the input stream referenced by fp. It copies the read string into the buffer `buf`, appending a `null` character to terminate the string.
 
-If this function encounters a newline character '\n' or the end of the file EOF before they have read the maximum number of characters, then it returns only the characters read up to that point including the new line character. You can also use **int fscanf(FILE *fp, const char *format, ...)** function to read strings from a file, but it stops reading after encountering the first space character.
+If this function encounters a newline character '\n' or the end of the file EOF before they have read the maximum number of characters, then it returns only the characters read up to that point including the new line character. You can also use `int fscanf(FILE *fp, const char *format, ...)` function to read strings from a file, but it stops reading after encountering the first space character.
 
 ```
 #include <stdio.h>
@@ -2496,7 +2486,7 @@ When the above code is compiled and executed, it reads the file created in the p
 3: This is testing for fputs...
 ```
 
-Let's see a little more in detail about what happened here. First, **fscanf()** read just **This** because after that, it encountered a space, second call is for **fgets()** which reads the remaining line till it encountered end of line. Finally, the last call **fgets()** reads the second line completely.
+Let's see a little more in detail about what happened here. First, `fscanf()` read just `This` because after that, it encountered a space, second call is for `fgets()` which reads the remaining line till it encountered end of line. Finally, the last call `fgets()` reads the second line completely.
 
 ## Binary I/O Functions
 
@@ -2545,7 +2535,7 @@ This directive tells the CPP to replace instances of MAX_ARRAY_LENGTH with 20. U
 #include "myheader.h"
 ```
 
-These directives tell the CPP to get stdio.h from **System Libraries** and add the text to the current source file. The next line tells CPP to get **myheader.h** from the local directory and add the content to the current source file.
+These directives tell the CPP to get `stdio.h` from **System Libraries** and add the text to the current source file. The next line tells CPP to get `myheader.h` from the local directory and add the content to the current source file.
 
 ```
 #undef  FILE_SIZE
@@ -2611,9 +2601,9 @@ ANSI :1
 
 The C preprocessor offers the following operators to help create macros −
 
-### The Macro Continuation (\) Operator
+### The Macro Continuation `(\)` Operator
 
-A macro is normally confined to a single line. The macro continuation operator (\) is used to continue a macro that is too long for a single line. For example −
+A macro is normally confined to a single line. The macro continuation operator `(\)` is used to continue a macro that is too long for a single line. For example −
 
 ```
 #define  message_for(a, b)  \
@@ -2669,11 +2659,11 @@ It happened so because this example results in the following actual output from 
 printf ("token34 = %d", token34);
 ```
 
-This example shows the concatenation of token##n into token34 and here we have used both **stringize** and **token-pasting**.
+This example shows the concatenation of token##n into token34 and here we have used both **`stringize`** and **`token-pasting`**.
 
 ### The Defined() Operator
 
-The preprocessor **defined** operator is used in constant expressions to determine if an identifier is defined using #define. If the specified identifier is defined, the value is true (non-zero). If the symbol is not defined, the value is false (zero). The defined operator is specified as follows −
+The preprocessor **`defined`** operator is used in constant expressions to determine if an identifier is defined using `#define`. If the specified identifier is defined, the value is true (non-zero). If the symbol is not defined, the value is false (zero). The defined operator is specified as follows −
 
 
 ```
@@ -2732,9 +2722,9 @@ Max between 20 and 10 is 20
 
 # C - Header Files
 
-A header file is a file with extension **.h** which contains C function declarations and macro definitions to be shared between several source files. There are two types of header files: the files that the programmer writes and the files that comes with your compiler.
+A header file is a file with extension **`.h`** which contains C function declarations and macro definitions to be shared between several source files. There are two types of header files: the files that the programmer writes and the files that comes with your compiler.
 
-You request to use a header file in your program by including it with the C preprocessing directive **#include**, like you have seen inclusion of **stdio.h** header file, which comes along with your compiler.
+You request to use a header file in your program by including it with the C preprocessing directive **`#include`**, like you have seen inclusion of **`stdio.h`** header file, which comes along with your compiler.
 
 Including a header file is equal to copying the content of the header file but we do not do it because it will be error-prone and it is not a good idea to copy the content of a header file in the source files, especially if we have multiple source files in a program.
 
@@ -2742,7 +2732,7 @@ A simple practice in C or C++ programs is that we keep all the constants, macros
 
 ## Include Syntax
 
-Both the user and the system header files are included using the preprocessing directive **#include**. It has the following two forms −
+Both the user and the system header files are included using the preprocessing directive **`#include`**. It has the following two forms −
 
 ```
 #include <file>
@@ -2758,7 +2748,7 @@ This form is used for header files of your own program. It searches for a file n
 
 ## Include Operation
 
-The **#include** directive works by directing the C preprocessor to scan the specified file as input before continuing with the rest of the current source file. The output from the preprocessor contains the output already generated, followed by the output resulting from the included file, followed by the output that comes from the text after the **#include** directive. For example, if you have a header file header.h as follows −
+The **`#include`** directive works by directing the C preprocessor to scan the specified file as input before continuing with the rest of the current source file. The output from the preprocessor contains the output already generated, followed by the output resulting from the included file, followed by the output that comes from the text after the **`#include`** directive. For example, if you have a header file `header.h` as follows −
 
 ```
 char *test (void);
@@ -2918,18 +2908,18 @@ Here, it is simple to understand that first c gets converted to integer, but as 
 
 # C - Error Handling
 
-As such, C programming does not provide direct support for error handling but being a system programming language, it provides you access at lower level in the form of return values. Most of the C or even Unix function calls return -1 or NULL in case of any error and set an error code **errno**. It is set as a global variable and indicates an error occurred during any function call. You can find various error codes defined in <error.h> header file.
+As such, C programming does not provide direct support for error handling but being a system programming language, it provides you access at lower level in the form of return values. Most of the C or even Unix function calls return -1 or NULL in case of any error and set an error code **`errno`**. It is set as a global variable and indicates an error occurred during any function call. You can find various error codes defined in `<error.h>` header file.
 
 So a C programmer can check the returned values and can take appropriate action depending on the return value. It is a good practice, to set errno to 0 at the time of initializing a program. A value of 0 indicates that there is no error in the program.
 
 ## errno, perror(). and strerror()
 
-The C programming language provides **perror()** and **strerror()** functions which can be used to display the text message associated with **errno**.
+The C programming language provides **`perror()`** and **`strerror()`** functions which can be used to display the text message associated with **`errno`**.
 
-- The **perror()** function displays the string you pass to it, followed by a colon, a space, and then the textual representation of the current errno value.
-- The **strerror()** function, which returns a pointer to the textual representation of the current errno value.
+- The **`perror()`** function displays the string you pass to it, followed by a colon, a space, and then the textual representation of the current errno value.
+- The **`strerror()`** function, which returns a pointer to the textual representation of the current errno value.
 
-Let's try to simulate an error condition and try to open a file which does not exist. Here I'm using both the functions to show the usage, but you can use one or more ways of printing your errors. Second important point to note is that you should use **stderr** file stream to output all the errors.
+Let's try to simulate an error condition and try to open a file which does not exist. Here I'm using both the functions to show the usage, but you can use one or more ways of printing your errors. Second important point to note is that you should use **`stderr`** file stream to output all the errors.
 
 ```
 #include <stdio.h>
@@ -3144,7 +3134,7 @@ int main() {
 }
 ```
 
-It should be noted that the function **func()** has its last argument as ellipses, i.e. three dotes (**...**) and the one just before the ellipses is always an **int** which will represent the total number variable arguments passed. To use such functionality, you need to make use of **stdarg.h** header file which provides the functions and macros to implement the functionality of variable arguments and follow the given steps −
+It should be noted that the function **`func()`** has its last argument as ellipses, i.e. three dotes `(...)` and the one just before the ellipses is always an **`int`** which will represent the total number variable arguments passed. To use such functionality, you need to make use of **`stdarg.h`** header file which provides the functions and macros to implement the functionality of variable arguments and follow the given steps −
 
 - Define a function with its last parameter as ellipses and the one just before the ellipses is always an **int** which will represent the number of arguments.
 - Create a **va_list** type variable in the function definition. This type is defined in stdarg.h header file.
@@ -3193,7 +3183,7 @@ Average of 5, 10, 15 = 10.000000
 
 # C - Memory Management
 
-This chapter explains dynamic memory management in C. The C programming language provides several functions for memory allocation and management. These functions can be found in the **<stdlib.h>** header file.
+This chapter explains dynamic memory management in C. The C programming language provides several functions for memory allocation and management. These functions can be found in the **`<stdlib.h>`** header file.
 
 |Sr.No.|Function & Description|
 |---|---|
@@ -3245,7 +3235,7 @@ Name = Zara Ali
 Description: Zara ali a DPS student in class 10th
 ```
 
-Same program can be written using **calloc();** only thing is you need to replace malloc with calloc as follows −
+Same program can be written using `calloc();` only thing is you need to replace malloc with calloc as follows −
 
 ```
 calloc(200, sizeof(char));
@@ -3255,9 +3245,9 @@ So you have complete control and you can pass any size value while allocating me
 
 ## Resizing and Releasing Memory
 
-When your program comes out, operating system automatically release all the memory allocated by your program but as a good practice when you are not in need of memory anymore then you should release that memory by calling the function **free()**.
+When your program comes out, operating system automatically release all the memory allocated by your program but as a good practice when you are not in need of memory anymore then you should release that memory by calling the function **`free()`**.
 
-Alternatively, you can increase or decrease the size of an allocated memory block by calling the function **realloc()**. Let us check the above program once again and make use of realloc() and free() functions −
+Alternatively, you can increase or decrease the size of an allocated memory block by calling the function **`realloc()`**. Let us check the above program once again and make use of `realloc()` and `free()` functions −
 
 ```
 #include <stdio.h>
@@ -3304,13 +3294,13 @@ Name = Zara Ali
 Description: Zara ali a DPS student.She is in class 10th
 ```
 
-You can try the above example without re-allocating extra memory, and strcat() function will give an error due to lack of available memory in description.
+You can try the above example without re-allocating extra memory, and `strcat()` function will give an error due to lack of available memory in description.
 
 # C - Command Line Arguments
 
 It is possible to pass some values from the command line to your C programs when they are executed. These values are called **command line arguments** and many times they are important for your program especially when you want to control your program from outside instead of hard coding those values inside the code.
 
-The command line arguments are handled using main() function arguments where **argc** refers to the number of arguments passed, and **argv[]** is a pointer array which points to each argument passed to the program. Following is a simple example which checks if there is any argument supplied from the command line and take action accordingly −
+The command line arguments are handled using `main()` function arguments where **`argc`** refers to the number of arguments passed, and **`argv[]`** is a pointer array which points to each argument passed to the program. Following is a simple example which checks if there is any argument supplied from the command line and take action accordingly −
 
 ```
 #include <stdio.h>
@@ -3350,7 +3340,7 @@ $./a.out
 One argument expected
 ```
 
-It should be noted that **argv[0]** holds the name of the program itself and **argv[1]** is a pointer to the first command line argument supplied, and *argv[n] is the last argument. If no arguments are supplied, argc will be one, and if you pass one argument then **argc** is set at 2.
+It should be noted that **`argv[0]`** holds the name of the program itself and **`argv[1]`** is a pointer to the first command line argument supplied, and `*argv[n]` is the last argument. If no arguments are supplied, argc will be one, and if you pass one argument then **`argc`** is set at 2.
 
 You pass all the command line arguments separated by a space, but if argument itself has a space then you can pass such arguments by putting them inside double quotes "" or single quotes ''. Let us re-write above example once again where we will print program name and we also pass a command line argument by putting inside double quotes −
 
